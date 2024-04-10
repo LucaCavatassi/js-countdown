@@ -1,6 +1,12 @@
-let seconds = document.querySelector(".countdown")
-console.log(seconds);
+let domElem = document.querySelector(".countdown");
+let seconds = 11;
 
-setInterval (timerHandler(seconds.innerText), 1000) 
+const countdown = setInterval (function(){
+    seconds--; console.log(seconds);
 
-console.log(timerHandler(seconds.innerText));
+    if (seconds === 0){
+        clearInterval(countdown)
+        console.log("AUGURI");
+    }
+}, 1000) 
+
